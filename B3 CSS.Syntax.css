@@ -1,0 +1,153 @@
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+.region {
+    background-color: white;
+    width: 95%;
+    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid rgb(204, 204, 204);
+    margin: auto;
+    padding: 50px;
+}
+
+.h1 {
+    Font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.behav {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.behav div {
+    padding: 17px;
+    background-color: rgb(23, 168, 113);
+    font-weight: bolder;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+}
+
+.behav :hover {
+    background-color: rgb(0, 117, 82);
+}
+
+.note1 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px -30px;
+    padding: 20px 30px;
+    font-size: larger;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.h2 {
+    font-size: 35px
+}
+
+p {
+    font-size: 19px;
+}
+
+.box {
+    background-color: rgb(231, 231, 231);
+    margin-left: -30px;
+    padding: 15px 30px;
+    border-radius: 7px;
+}
+
+.h3 {
+    font-size: 30px;
+    margin: 5px 0px;
+}
+
+#code {
+    background-color: white;
+    border-left: 4px solid green;
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#code p {
+    color: brown;
+    margin: 0px;
+}
+
+#code ul {
+    margin: 5px -20px;
+    list-style-type: none;
+}
+
+.red {
+    font-size: 17px;
+    color: red;
+}
+
+.blue {
+    font-size: 17px;
+    color: rgb(0, 81, 255);
+}
+
+#try {
+    border-radius: 10px;
+    background-color: rgb(23, 168, 113);
+    padding: 14px;
+    width: fit-content;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.h4 {
+    margin: 20px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+}
+
+li {
+    font-size: 19px;
+    margin-top: 2px;
+}
+
+code {
+    color: brown;
+    background-color: rgb(226, 226, 226);
+    font-weight: bolder;
+    padding: 2px 4px;
+}
+
+#note2 {
+    margin: 20px -40px;
+    padding: 40px;
+    background-color: rgb(255, 255, 209);
+}
+
+.video {
+    font-size: 30px;
+    margin: auto;
+    width: fit-content;
+    padding-bottom: 10px;
+}
+
+a img {
+    width: 95%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin-bottom: 20px;
+}

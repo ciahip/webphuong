@@ -1,0 +1,20 @@
+.container {
+    margin: 20px;
+}
+
+.box {
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: lightblue;
+}
+
+.one {
+    width: 300px;
+}
+
+.three {
+    width: 300px;
+    padding: 25px;
+    background-color: lightgreen;
+}

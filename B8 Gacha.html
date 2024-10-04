@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 500px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            font-size: 25px;
+        }
+
+        input {
+            width: 30%;
+            padding: 5%;
+            margin: 5% 25%;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            font-size: 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #numberOptions button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #numberOptions button:hover {
+            background-color: #ec971f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Game đoán số</h1>
+        <label for="difficulty">Level:</label>
+        <input type="number" id="difficulty" min="0" max="9" placeholder="Level">
+        <button onclick="startGame()">START</button>
+
+        <div id="gameSection" style="display:none;">
+            <p>Hãy nhập một số từ 0 đến <span id="maxNumber"></span> hoặc chọn ở dưới</p>
+            <div id="numberOptions"></div>
+        </div>
+
+        <p id="message"></p>
+        <p id="trueanswer"></p>
+    </div>
+    <script src="B8 Gacha.js"></script>
+</body>
+
+</html>

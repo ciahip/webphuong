@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bài 4</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .form-container {
+      width: 700px;
+      margin: 0 auto;
+    }
+    .form-container h1 {
+      text-align: center;
+    }
+    .form-container label {
+      display: block;
+      margin-top: 10px;
+    }
+    .form-container input,
+    .form-container select {
+      width: 200px;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .form-container .gender {
+      display: flex;
+    }
+    .form-container .interests {
+      display: flex;
+      justify-content: space-between;
+    }
+    .form-container .gender input,
+    .form-container .interests input {
+      width: auto;
+    }
+    .form-container button {
+      width: 100px;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .dob {
+      display: flex;
+    }
+  </style>
+  <body>
+    <div class="form-container">
+      <h1>FORM ĐĂNG KÝ</h1>
+      <form id="registrationForm">
+        <label for="ho">Họ</label>
+        <input type="text" id="ho" name="ho" required />
+        <label for="ten">Tên</label>
+        <input type="text" id="ten" name="ten" required />
+        <label for="dob">Ngày sinh:</label>
+        <div class="dob">
+          <p>Ngày:</p>
+          <select id="day" name="day"></select>
+          <p>Tháng:</p>
+          <select id="month" name="month"></select>
+          <p>Năm:</p>
+          <select id="year" name="year"></select>
+        </div>
+
+        <label>Giới tính:</label>
+        <div class="gender">
+          <label><input type="radio" name="gender" value="male" /> Nam</label>
+          <label><input type="radio" name="gender" value="female" /> Nữ</label>
+        </div>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" required />
+
+        <label>Sở thích:</label>
+        <div class="interests">
+          <label
+            ><input type="checkbox" name="interests" value="reading" /> Đọc
+            sách</label
+          >
+          <label
+            ><input type="checkbox" name="interests" value="movies" /> Xem
+            phim</label
+          >
+          <label
+            ><input type="checkbox" name="interests" value="music" /> Nghe
+            nhạc</label
+          >
+          <label
+            ><input type="checkbox" name="interests" value="football" /> Đá
+            bóng</label
+          >
+        </div>
+        <div class="other">
+          <label for="khac">Khác </label>
+          <input type="text" id="khac" name="khac" required />
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const fullname = document.getElementById("fullname").value;
+          const phone = document.getElementById("phone").value;
+
+          if (fullname === "" || phone.length !== 10) {
+            alert(
+              "Vui lòng nhập đầy đủ họ tên và số điện thoại phải là 10 chữ số."
+            );
+            return false;
+          }
+
+          alert("Form submitted successfully!");
+        });
+    </script>
+  </body>
+</html>

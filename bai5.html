@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 5</title>
+    <style>
+      .slideshow-container {
+        position: relative;
+        max-width: 500px;
+        margin: auto;
+      }
+      .slides {
+        display: none;
+      }
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="slides">
+        <img
+          src="https://nld.mediacdn.vn/2018/4/5/2018-04-04t190248z1447965736rc1845732630rtrmadp3soccer-champions-liv-mci-15228940351471803314976.jpg"
+          style="width: 500px; height: 400px"
+        />
+      </div>
+      <div class="slides">
+        <img
+          src="https://media.vov.vn/sites/default/files/styles/large/public/2022-07/liv.png.jpg"
+          style="width: 500px; height: 400px"
+        />
+      </div>
+      <div class="slides">
+        <img
+          src="https://cdn.vox-cdn.com/thumbor/x0jYk1ckMaqtsZgF5j2bhNpMWnA=/0x397:5729x4401/1200x800/filters:focal(3103x740:4157x1794)/cdn.vox-cdn.com/uploads/chorus_image/image/73551959/2169249269.0.jpg"
+          style="width: 500px; height: 400px"
+        />
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

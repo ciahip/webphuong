@@ -61,11 +61,29 @@ nav {
 }
 
 .navitem {
+    position: relative;
     color: #fff;
     text-decoration: none;
     font-size: calc(0.3vw + 15px);
     font-weight: 400;
     padding: 10px;
+}
+
+.navitem::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    bottom: 5px;
+    background-color: #ffffff;
+    z-index: 1001;
+    transition: 0.5s ease
+}
+
+.navitem:hover::after {
+    width: calc(100% - 20px);
+    left: 10px;
 }
 
 h2 {

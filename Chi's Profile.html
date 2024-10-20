@@ -10,21 +10,20 @@
 
 <body>
     <header>
-        <div class="hero">
+        <div class="banner">
+            <img src="black cat.png" alt="">
             <h1>Designer Portfolio</h1>
         </div>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="https://ciahip.github.io/webphuong/clone.html">Excercise</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div><a class="navitem" href="#abt">About Me</a></div>
+        <div><a class="navitem" href="#skl">Skills</a></div>
+        <div><a class="navitem" href="https://ciahip.github.io/webphuong/clone.html">Excercise</a></div>
+        <div><a class="navitem" href="#ptf">Portfolio</a></div>
+        <div><a class="navitem" href="#cnt">Contact</a></div>
     </nav>
-
+    <div class="space" id="abt"></div>
     <section id="about-me">
         <h2>About Me</h2>
         <img src="Q.Chiiii.jpg" alt="Portrait" class="portrait">
@@ -34,15 +33,14 @@
         <p>Birthday: 12/03/2005</p>
         <p>Major: Information Technology</p>
         <p>School: Hanoi Metropolitian University</p>
-
     </section>
-
+    <div class="space" id="skl"></div>
     <section id="skills">
         <h2>Skills</h2>
         <div class="skill-icons">
             <div class="skill">
                 <img src="photoshop-icon.png" alt="Photoshop">
-                <p>Adobe Photoshop</p>
+                <p>Photoshop</p>
             </div>
             <div class="skill">
                 <img src="illustrator-icon.png" alt="Illustrator">
@@ -53,34 +51,33 @@
                 <p>Figma</p>
             </div>
             <div class="skill">
-                <img src="ưeb.png" alt="Web Design">
-                <p>Web Design</p>
+                <img src="Vs code.png" alt="Web Design">
+                <p>Web Develop</p>
             </div>
         </div>
     </section>
-
+    <div class="space" id="ptf"></div>
     <section id="portfolio">
         <h2>Portfolio</h2>
         <div class="projects">
             <div class="project">
                 <img src="web1.png" alt="Project 1">
                 <h3>Project 1</h3>
-                <p></p>
+                <p>My homework page</p>
             </div>
             <div class="project">
                 <img src="web2.png" alt="Project 2">
                 <h3>Project 2</h3>
                 <p>Creative branding package for a retail business.</p>
             </div>
-            <!-- Add more projects as needed -->
         </div>
     </section>
 
     <section>
         <h2>Future Direction</h2>
         <p>Tester</p>
-
     </section>
+    <div class="space" id="cnt"></div>
     <section id="contact">
         <h2>Contact Me</h2>
         <form action="submit_form.php" method="post">
@@ -95,8 +92,92 @@
         <p>© 2024 Designer Portfolio. All rights reserved.</p>
     </footer>
     <script>
-        alert("Hello! I'm Chi");
+        const skills = document.querySelectorAll('.skill');
+        const skillsSection = document.querySelector("#skills");
+        const projects = document.querySelectorAll('.project');
+        const portfolioSection = document.querySelector("#portfolio");
+        skills.forEach(skill => skill.classList.add("offscreen"));
+        projects.forEach(proj => proj.classList.add("offscreen"));
+
+
+        const observerSkills = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skills.forEach(skill => {
+                        skill.classList.remove("offscreen");
+                        skill.classList.add("visible");
+                    });
+                } else {
+                    const viewportHeight = window.innerHeight;
+                    const sectionRect = skillsSection.getBoundingClientRect();
+
+                    if (sectionRect.top < viewportHeight / 4 || sectionRect.bottom > viewportHeight) {
+                        skills.forEach(skill => {
+                            skill.classList.remove("visible");
+                            skill.classList.add("offscreen");
+                        });
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        const observerPortfolio = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    projects.forEach(proj => {
+                        proj.classList.remove("offscreen");
+                        proj.classList.add("visible");
+                    });
+                } else {
+                    const viewportHeight = window.innerHeight;
+                    const sectionRect = portfolioSection.getBoundingClientRect();
+
+                    if (sectionRect.top < viewportHeight / 4 || sectionRect.bottom > viewportHeight) {
+                        projects.forEach(proj => {
+                            proj.classList.remove("visible");
+                            proj.classList.add("offscreen");
+                        });
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+
+        observerSkills.observe(skillsSection);
+        observerPortfolio.observe(portfolioSection);
     </script>
+    <script>
+        const contactElements = document.querySelectorAll("#contact form input, #contact form textarea, #contact form button");
+        const contactSection = document.querySelector("#contact");
+        contactElements.forEach(el => {
+            el.classList.add("offscreen");
+        });
+        const observerContact = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    contactElements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add("visible");
+                            el.classList.remove("offscreen");
+                        }, index * 200);
+                    });
+                } else {
+                    contactElements.forEach(el => {
+                        el.classList.remove("visible");
+                        el.classList.add("offscreen");
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        observerContact.observe(contactSection);
+    </script>
+
 </body>
 
 </html>

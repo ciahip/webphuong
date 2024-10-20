@@ -91,6 +91,10 @@ h2 {
     margin-bottom: 2vw;
 }
 
+h3 {
+    font-size: 2.7vw;
+}
+
 li {
     list-style-type: none;
 }
@@ -132,6 +136,7 @@ section {
     opacity: 0;
     transform: translateX(-100vw);
     transition: transform 0.7s ease-in-out, opacity 0.8s ease-in-out;
+    cursor: pointer;
 }
 
 .skill.visible {
@@ -141,12 +146,17 @@ section {
 
 .skill img {
     width: 10vw;
+    transition: scale 0.4s ease;
+}
+
+.skill:hover img {
+    scale: 1.1;
 }
 
 .projects .project {
     opacity: 0;
     transform: translateX(100vw);
-    transition: transform 0.7s ease-in-out, opacity 0.8s ease-in-out;
+    transition: transform 0.7s ease-in-out, opacity 0.8s ease-in-out, scale 0.4s ease, border-radius 0.4s ease;
 }
 
 .projects .project.visible {
@@ -174,6 +184,13 @@ p {
     height: 36vw;
     margin: -4vw 2.5vw 0;
     box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.199);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project:hover {
+    scale: 1.1;
+    border-radius: 1vw;
 }
 
 .project img {

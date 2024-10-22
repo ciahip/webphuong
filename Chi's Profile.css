@@ -295,4 +295,8 @@ footer p {
         margin: 1.3vw 10vw;
         font-size: calc(2vw + 3px);
     }
+
+    .navitem {
+        font-size: calc(0.4vw + 5px);
+    }
 }
